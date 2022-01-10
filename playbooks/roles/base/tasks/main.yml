@@ -1,0 +1,13 @@
+---
+- name: Install Packages
+  yum: 
+    name:
+      - make
+      - gcc
+      - perl
+      - perl-Time-HiRes
+    state: latest
+  register: packages_output
+  retries: 5
+  delay: 10
+  until: packages_output is not failed

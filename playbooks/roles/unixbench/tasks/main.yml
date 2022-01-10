@@ -1,0 +1,15 @@
+---
+- name: copy UnixBench5.1.3.tgz
+  become: true
+  copy:
+    src: UnixBench5.1.3.tgz
+    dest: /opt/UnixBench5.1.3.tgz
+  with_items:
+    - UnixBench5.1.3.tgz
+
+- name: Extract UnixBench5.1.3.tgz
+  become: true
+  shell:
+    cmd: (cd /opt/ && tar xzf UnixBench5.1.3.tgz && cd UnixBench)
+    warn: false
+  #run_once: true
