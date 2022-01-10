@@ -3,12 +3,9 @@
   shell:
     cmd: (cd /opt/UnixBench; sudo ./Run -c 1)
     warn: false
-  run_once: true
 
-#- name: run UnixBench 8vcpu
-#  become: true
-#  shell:
-#    cmd: (cd /opt/UnixBench; sudo ./Run -c 8)
-#    warn: false
-#  run_once: true
-#  timeout: 3600
+- name: run UnixBench 8vcpu
+  become: true
+  shell:
+    cmd: (cd /opt/UnixBench; sudo ./Run -c 8)
+    warn: false
